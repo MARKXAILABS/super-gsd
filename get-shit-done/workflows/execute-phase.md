@@ -247,6 +247,7 @@ Execute each selected wave in sequence. Within a wave: parallel if `PARALLELIZAT
    ```
    Task(
      subagent_type="gsd-executor",
+     description="Execute plan {plan_number} of phase {phase_number}",
      model="{executor_model}",
      isolation="worktree",
      prompt="
@@ -748,6 +749,7 @@ VERIFIER_SKILLS=$(node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" agent-ski
 
 ```
 Task(
+  description="Verify phase {phase_number} goal achievement",
   prompt="Verify phase {phase_number} goal achievement.
 Phase directory: {phase_dir}
 Phase goal: {goal from ROADMAP.md}
