@@ -158,7 +158,8 @@ Fallback skills live in .agents/skills/.`;
         assert.ok(result.includes('.kilo/skills/'), '.claude/skills should be replaced for Kilo');
         assert.ok(result.includes('.kilo/agents/'), '.claude/agents should be replaced for Kilo');
         assert.ok(result.includes('./.kilo/hooks/'), './.claude should be replaced for Kilo');
-        assert.ok(result.includes('.kilo/skill/'), '.agents/skills should be rewritten to Kilo skill dir');
+        assert.ok(result.includes('Fallback skills live in .kilo/skills/.'), '.agents/skills should be rewritten to Kilo skills dir');
+        assert.ok(!result.includes('.kilo/skill/'), 'singular Kilo skill dir should not be emitted');
       }
     });
   });

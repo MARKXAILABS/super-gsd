@@ -2895,8 +2895,9 @@ function convertClaudeToKiloFrontmatter(content, { isAgent = false } = {}) {
   convertedContent = convertedContent.replace(/~\/\.claude\b/g, '~/.config/kilo');
   convertedContent = convertedContent.replace(/\$HOME\/\.claude\b/g, '$HOME/.config/kilo');
   convertedContent = convertedContent.replace(/\.\/\.claude\//g, './.kilo/');
+  // Normalize both Claude skill directory variants to Kilo's canonical skills dir.
   convertedContent = replaceRelativePathReference(convertedContent, '.claude/skills/', '.kilo/skills/');
-  convertedContent = replaceRelativePathReference(convertedContent, '.agents/skills/', '.kilo/skill/');
+  convertedContent = replaceRelativePathReference(convertedContent, '.agents/skills/', '.kilo/skills/');
   convertedContent = replaceRelativePathReference(convertedContent, '.claude/agents/', '.kilo/agents/');
   // Replace general-purpose subagent type with Kilo's equivalent "general"
   convertedContent = convertedContent.replace(/subagent_type="general-purpose"/g, 'subagent_type="general"');
@@ -4337,8 +4338,14 @@ function configureOpencodePermissions(isGlobal = true, configDir = null) {
     }
   }
 
+  // OpenCode also supports a top-level string permission like "allow".
+  // In that case, path-specific permission entries are unnecessary.
+  if (typeof config.permission === 'string') {
+    return;
+  }
+
   // Ensure permission structure exists
-  if (!config.permission) {
+  if (!config.permission || typeof config.permission !== 'object') {
     config.permission = {};
   }
 
@@ -5619,6 +5626,7 @@ if (process.env.GSD_TEST_MODE) {
     convertClaudeCommandToCodexSkill,
     convertClaudeToOpencodeFrontmatter,
     convertClaudeToKiloFrontmatter,
+    configureOpencodePermissions,
     neutralizeAgentReferences,
     GSD_CODEX_MARKER,
     CODEX_AGENT_SANDBOX,
