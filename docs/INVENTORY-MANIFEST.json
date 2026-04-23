@@ -266,6 +266,7 @@
       "config.cjs",
       "core.cjs",
       "docs.cjs",
+      "drift.cjs",
       "frontmatter.cjs",
       "graphify.cjs",
       "gsd2-import.cjs",
