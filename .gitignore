@@ -21,10 +21,9 @@ coverage/
 animation/
 *.gif
 
-# Internal planning documents
+# Internal planning documents (upstream's; super-gsd tracks .planning/ — see below)
 reports/
 RAILROAD_ARCHITECTURE.md
-.planning/
 analysis/
 docs/GSD-MASTER-ARCHITECTURE.md
 docs/GSD-RUST-IMPLEMENTATION-GUIDE.md
@@ -32,6 +31,9 @@ docs/GSD-SYSTEM-SPECIFICATION.md
 gaps.md
 improve.md
 philosophy.md
+
+# super-gsd: TRACK .planning/ for dogfood proof
+# (upstream's .planning/ exclusion intentionally removed)
 
 # Installed skills
 .github/agents/gsd-*
