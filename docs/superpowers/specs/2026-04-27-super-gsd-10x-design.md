@@ -5,7 +5,7 @@
 **Author:** super-gsd team
 **Forked from:** [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done) v1.38.5 (snapshot 2026-04-25)
 **Target package:** `super-gsd` on npm (verified available 2026-04-27)
-**Target repo:** `<owner>/super-gsd` on GitHub (owner TBD — see Open Items)
+**Target repo:** [`markxailabs/super-gsd`](https://github.com/markxailabs/super-gsd) on GitHub (confirmed 2026-04-27)
 
 ---
 
@@ -105,7 +105,7 @@ Three rules govern where each upgrade lives:
 
 `git remote` configuration in `E:\super-gsd\`:
 - `upstream` → `https://github.com/gsd-build/get-shit-done.git` (already set ✅)
-- `origin` → `https://github.com/<owner>/super-gsd.git` (added when GitHub repo created)
+- `origin` → `https://github.com/markxailabs/super-gsd.git` (added when GitHub repo created)
 
 ### 3.4 Three-layer memory architecture
 
@@ -274,7 +274,7 @@ If checkpoint fails:
 | Step | Command | Owner |
 |---|---|---|
 | 1. Reserve npm name | I prepare a temp dir `E:\npm-reserve-super-gsd\` with a minimal `package.json` (name=`super-gsd`, version=`0.0.0`, empty bin); user runs `npm publish` from that dir | User runs (needs `npm login`) |
-| 2. Create GitHub repo | `gh repo create <owner>/super-gsd --public` | User runs OR I run with explicit consent |
+| 2. Create GitHub repo | `gh repo create markxailabs/super-gsd --public` | User runs OR I run with explicit consent |
 | 3. Push initial commit | `git push -u origin main` | After repo created |
 | 4. Final publish | `npm publish --tag preview` | End of day, user runs |
 | 5. Create GitHub release | `gh release create v0.1.0-preview.0 --prerelease` | Same time |
@@ -332,7 +332,7 @@ If checkpoint fails:
 
 | # | Item | Default if not resolved |
 |---|---|---|
-| O-01 | GitHub owner/org for the new repo | Use `markxailabs` (derived from user email) — **CONFIRM with user before push** |
+| O-01 | ~~GitHub owner/org for the new repo~~ | **RESOLVED 2026-04-27:** `markxailabs` confirmed by user. |
 | O-02 | npm publishing account | User must `npm login` before publish step — **defer to user** |
 | O-03 | First Global Brain seed content | Empty files with comments. User adds rules over time. |
 | O-04 | Whether to back-port any Tier features to upstream as PRs | NOT in v0.1 scope. Re-evaluate post-launch. |
