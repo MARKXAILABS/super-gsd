@@ -1,9 +1,9 @@
 {
-  "name": "get-shit-done-cc",
-  "version": "1.38.5",
-  "description": "A meta-prompting, context engineering and spec-driven development system for Claude Code, OpenCode, Gemini and Codex by TÂCHES.",
+  "name": "super-gsd",
+  "version": "0.1.0-preview.0",
+  "description": "Highly-autonomous, anti-hallucination, veteran-grade upgrade of GSD. 30 upgrades across 4 tiers: Foundation, Iron Rules, Strict Process, Veteran Layers. Forked from gsd-build/get-shit-done v1.38.5.",
   "bin": {
-    "get-shit-done-cc": "bin/install.js",
+    "super-gsd": "bin/install.js",
     "gsd-sdk": "bin/gsd-sdk.js"
   },
   "files": [
@@ -27,20 +27,23 @@
     "meta-prompting",
     "context-engineering",
     "spec-driven-development",
-    "gemini",
-    "gemini-cli",
-    "codex",
-    "codex-cli"
+    "autonomous",
+    "anti-hallucination",
+    "tdd",
+    "self-healing",
+    "global-brain",
+    "iron-rules",
+    "gsd"
   ],
-  "author": "TÂCHES",
+  "author": "super-gsd contributors",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gsd-build/get-shit-done.git"
+    "url": "git+https://github.com/markxailabs/super-gsd.git"
   },
-  "homepage": "https://github.com/gsd-build/get-shit-done",
+  "homepage": "https://github.com/markxailabs/super-gsd",
   "bugs": {
-    "url": "https://github.com/gsd-build/get-shit-done/issues"
+    "url": "https://github.com/markxailabs/super-gsd/issues"
   },
   "engines": {
     "node": ">=22.0.0"
@@ -61,5 +64,12 @@
     "lint:tests": "node scripts/lint-no-source-grep.cjs",
     "test": "node scripts/run-tests.cjs",
     "test:coverage": "c8 --check-coverage --lines 70 --reporter text --include 'get-shit-done/bin/lib/*.cjs' --exclude 'tests/**' --all node scripts/run-tests.cjs"
+  },
+  "forkedFrom": {
+    "name": "get-shit-done-cc",
+    "version": "1.38.5",
+    "author": "TÂCHES",
+    "url": "https://github.com/gsd-build/get-shit-done",
+    "license": "MIT"
   }
 }
